@@ -1,0 +1,18 @@
+<?php
+
+//=========================
+// Config you must change - updated by installer.
+//=========================
+define('DB_TYPE', 'mysql');
+define('DB_HOST', 'localhost');
+define('DB_USER', 'newznab');
+define('DB_PASSWORD', 'newznab');
+define('DB_NAME', 'newznab');
+
+define('NNTP_USERNAME', 'user');
+define('NNTP_PASSWORD', 'password');
+define('NNTP_SERVER', 'nntp.news.com');
+define('NNTP_PORT', '119');
+define('NNTP_SSLENABLED', false);
+
+require("automated.config.php");
