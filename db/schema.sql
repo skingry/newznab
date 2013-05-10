@@ -1,27 +1,5 @@
--- MySQL dump 10.13  Distrib 5.5.30, for FreeBSD9.1 (amd64)
---
--- Host: localhost    Database: newznab
--- ------------------------------------------------------
--- Server version	5.5.30-log
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-
---
--- Table structure for table `binaries`
---
 
 DROP TABLE IF EXISTS `binaries`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `binaries` (
   `ID` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
@@ -53,15 +31,8 @@ CREATE TABLE `binaries` (
   KEY `ix_binary_binaryhash` (`binaryhash`),
   KEY `ix_binary_groupID_procstat` (`procstat`,`groupID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Table structure for table `binaryblacklist`
---
 
 DROP TABLE IF EXISTS `binaryblacklist`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `binaryblacklist` (
   `ID` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `groupname` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -74,15 +45,8 @@ CREATE TABLE `binaryblacklist` (
   KEY `idx_status` (`status`),
   KEY `idx_groupname` (`groupname`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Table structure for table `category`
---
 
 DROP TABLE IF EXISTS `category`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `category` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -91,15 +55,8 @@ CREATE TABLE `category` (
   `description` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Table structure for table `consoleinfo`
---
 
 DROP TABLE IF EXISTS `consoleinfo`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `consoleinfo` (
   `ID` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(128) COLLATE utf8_unicode_ci NOT NULL,
@@ -117,15 +74,8 @@ CREATE TABLE `consoleinfo` (
   `updateddate` datetime NOT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Table structure for table `content`
---
 
 DROP TABLE IF EXISTS `content`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `content` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -140,15 +90,8 @@ CREATE TABLE `content` (
   `role` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Table structure for table `forumpost`
---
 
 DROP TABLE IF EXISTS `forumpost`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `forumpost` (
   `ID` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `forumID` int(11) NOT NULL DEFAULT '1',
@@ -167,30 +110,16 @@ CREATE TABLE `forumpost` (
   KEY `createddate` (`createddate`),
   KEY `updateddate` (`updateddate`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Table structure for table `genres`
---
 
 DROP TABLE IF EXISTS `genres`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `genres` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `type` int(4) DEFAULT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Table structure for table `groups`
---
 
 DROP TABLE IF EXISTS `groups`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `groups` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
@@ -207,15 +136,8 @@ CREATE TABLE `groups` (
   UNIQUE KEY `name` (`name`),
   KEY `active` (`active`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Table structure for table `menu`
---
 
 DROP TABLE IF EXISTS `menu`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `menu` (
   `ID` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `href` varchar(2000) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
@@ -226,15 +148,8 @@ CREATE TABLE `menu` (
   `menueval` varchar(2000) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Table structure for table `movieinfo`
---
 
 DROP TABLE IF EXISTS `movieinfo`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `movieinfo` (
   `ID` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `imdbID` mediumint(7) unsigned zerofill NOT NULL,
@@ -255,15 +170,8 @@ CREATE TABLE `movieinfo` (
   PRIMARY KEY (`ID`),
   UNIQUE KEY `imdbID` (`imdbID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Table structure for table `musicinfo`
---
 
 DROP TABLE IF EXISTS `musicinfo`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `musicinfo` (
   `ID` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(128) COLLATE utf8_unicode_ci NOT NULL,
@@ -282,15 +190,8 @@ CREATE TABLE `musicinfo` (
   `updateddate` datetime NOT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Table structure for table `partrepair`
---
 
 DROP TABLE IF EXISTS `partrepair`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `partrepair` (
   `ID` int(16) unsigned NOT NULL AUTO_INCREMENT,
   `numberID` bigint(20) unsigned NOT NULL,
@@ -300,15 +201,8 @@ CREATE TABLE `partrepair` (
   UNIQUE KEY `ix_partrepair_numberID_groupID` (`numberID`,`groupID`),
   KEY `idx_groupID_attempts` (`groupID`,`attempts`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Table structure for table `parts`
---
 
 DROP TABLE IF EXISTS `parts`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `parts` (
   `ID` int(16) unsigned NOT NULL AUTO_INCREMENT,
   `binaryID` int(11) unsigned NOT NULL DEFAULT '0',
@@ -322,15 +216,8 @@ CREATE TABLE `parts` (
   KEY `ix_parts_dateadded` (`dateadded`),
   KEY `ix_parts_number` (`number`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Table structure for table `releasecomment`
---
 
 DROP TABLE IF EXISTS `releasecomment`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `releasecomment` (
   `ID` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `releaseID` int(11) unsigned NOT NULL,
@@ -342,15 +229,8 @@ CREATE TABLE `releasecomment` (
   KEY `ix_releasecomment_releaseID` (`releaseID`),
   KEY `ix_releasecomment_userID` (`userID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Table structure for table `releasenfo`
---
 
 DROP TABLE IF EXISTS `releasenfo`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `releasenfo` (
   `ID` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `releaseID` int(11) unsigned NOT NULL,
@@ -360,15 +240,8 @@ CREATE TABLE `releasenfo` (
   PRIMARY KEY (`ID`),
   UNIQUE KEY `ix_releasenfo_releaseID` (`releaseID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Table structure for table `releaseregex`
---
 
 DROP TABLE IF EXISTS `releaseregex`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `releaseregex` (
   `ID` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `groupname` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -379,15 +252,9 @@ CREATE TABLE `releaseregex` (
   `categoryID` int(11) DEFAULT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Table structure for table `releases`
---
 
 DROP TABLE IF EXISTS `releases`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `releases` (
   `ID` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
@@ -423,15 +290,8 @@ CREATE TABLE `releases` (
   KEY `ix_releases_imdbID` (`imdbID`),
   KEY `ix_releases_guid` (`guid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Table structure for table `site`
---
 
 DROP TABLE IF EXISTS `site`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `site` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `code` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -479,15 +339,8 @@ CREATE TABLE `site` (
   `showpasswordedrelease` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Table structure for table `tvrage`
---
 
 DROP TABLE IF EXISTS `tvrage`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tvrage` (
   `ID` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `rageID` int(11) NOT NULL,
@@ -501,15 +354,8 @@ CREATE TABLE `tvrage` (
   PRIMARY KEY (`ID`),
   KEY `ix_tvrage_rageID` (`rageID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Table structure for table `usercart`
---
 
 DROP TABLE IF EXISTS `usercart`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `usercart` (
   `ID` int(16) unsigned NOT NULL AUTO_INCREMENT,
   `userID` int(11) NOT NULL,
@@ -518,15 +364,8 @@ CREATE TABLE `usercart` (
   PRIMARY KEY (`ID`),
   UNIQUE KEY `ix_usercart_userrelease` (`userID`,`releaseID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Table structure for table `userexcat`
---
 
 DROP TABLE IF EXISTS `userexcat`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `userexcat` (
   `ID` int(16) unsigned NOT NULL AUTO_INCREMENT,
   `userID` int(11) NOT NULL,
@@ -535,15 +374,8 @@ CREATE TABLE `userexcat` (
   PRIMARY KEY (`ID`),
   UNIQUE KEY `ix_userexcat_usercat` (`userID`,`categoryID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Table structure for table `userinvite`
---
 
 DROP TABLE IF EXISTS `userinvite`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `userinvite` (
   `ID` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `guid` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
@@ -551,15 +383,8 @@ CREATE TABLE `userinvite` (
   `createddate` datetime NOT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Table structure for table `users`
---
 
 DROP TABLE IF EXISTS `users`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `users` (
   `ID` int(16) unsigned NOT NULL AUTO_INCREMENT,
   `username` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
@@ -581,18 +406,6 @@ CREATE TABLE `users` (
   `userseed` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
-
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
--- Dump completed on 2013-05-09 12:32:31
 
 INSERT INTO menu (`href`, `title`, `tooltip`, `role`, `ordinal` )
 VALUES ('search', 'Search', 
