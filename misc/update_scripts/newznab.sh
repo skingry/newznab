@@ -1,6 +1,6 @@
 #!/usr/local/bin/bash
 
-source ~/.bash_profile
+source ~/.profile
 
 # Define how long to sleep between runs
 SLEEP="60"
