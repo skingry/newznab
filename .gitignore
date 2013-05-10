@@ -1,0 +1,6 @@
+# NZB Files
+nzbfiles/*
+
+# Config File
+www/config.php
+www/covers/*
